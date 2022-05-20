@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h2>Successful paid</h2>
+      After <span id="JumpTo">10</span> seconds, it will return to homepage.
+      <p><button>Go back now</button></p>
+    </div>
+    <script>
+      window.onload = function () {
+        let timer = 10;
+        setInterval(() => {
+          timer--;
+          document.getElementById('JumpTo').innerText = timer;
+          if (timer == 0) {
+            location.href = 'https://www.google.com';
+          }
+        }, 1000);
+      };
+
+      document.getElementsByTagName('button')[0].onclick = () => {
+        location.href = 'https://www.google.com';
+      };
+    </script>
+  </body>
+</html>
