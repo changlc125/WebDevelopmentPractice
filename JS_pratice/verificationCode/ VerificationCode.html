@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="./index.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div>
+      <div class="code-show">
+        <span id="ourCode">C1o2D3e4</span>
+        <a id="generateCode">Generate a new code</a>
+      </div>
+
+      <div>
+        <label for="inputedCode">Input Verfication Code:</label>
+        <input id="inputedCode" type="text" />
+      </div>
+
+      <input id="btn" type="button" value="Confirm" />
+    </div>
+    <script>
+      window.onload = function () {
+        var ourCode = getCode();
+        function getCode() {
+          var arr = [
+            '0',
+            '1',
+            '2',
+            '3',
+            '4',
+            '5',
+            '6',
+            '7',
+            '8',
+            '9',
+            'a',
+            'b',
+            'c',
+            'd',
+            'e',
+            'f',
+            'g',
+            'h',
+            'i',
+            'j',
+            'k',
+            'l',
+            'm',
+            'n',
+            'o',
+            'm',
+            'p',
+            'r',
+            's',
+            't',
+            'u',
+            'v',
+            'w',
+            'x',
+            'y',
+            'z',
+          ];
+          var str = '';
+          for (let i = 0; i < 8; i++) {
+            var num = Math.round(Math.random() * (35 - 0) + 0);
+            str += arr[num];
+          }
+          return str;
+        }
+        document.getElementById('ourCode').innerText = ourCode;
+        document.getElementById('generateCode').onclick = function () {
+          document.getElementById('ourCode').innerText = getCode();
+        };
+
+        // verify if the code the user submits is correct or not
+        document.getElementById('btn').onclick = function () {
+          var ourCode = document.getElementById('ourCode').innerText;
+          var inputedCode = document.getElementById('inputedCode').value;
+          //   document.getElementById('inputedCode').innerText ==null;
+          if (ourCode != inputedCode) {
+            alert('Input a correct verification code , please');
+            document.getElementById('inputedCode').value = '';
+            return false;
+          } else {
+            alert('A Correct Verification Code');
+          }
+        };
+      };
+    </script>
+  </body>
+</html>
