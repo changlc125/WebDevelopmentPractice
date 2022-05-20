@@ -9,24 +9,25 @@
 2. verification code  
    2-1. Math.round(Math.random() \* (updound - lowbound) + lowbound);  
    2-2.  
-   <input id="btn" type="button" value="NAME_ON_BUTTON" />  
-   <input id="inputedCode" type="text" />  
+   //<input id="btn" type="button" value="NAME_ON_BUTTON" />  
+   //<input id="inputedCode" type="text" />  
    2-3. import css file
-    <link href="./index.css" rel="stylesheet" type="text/css" />   
-   2-4. [for in lable] connects to [other element's id ]    
-   once you click on text area that label is wrapping,    
-   the same operation to click on the [ element ] with connected id    
-   <label for="inputedCode">Input Verfication Code:</label>   
-    2-5. form controls (input, button, select, and textarea)[.value]   
-         any other element[.innerText];    
-    
-   You only use value on form controls (input, button, select, and textarea). For any other element, if you want its text, use textContent or innerText (or, depending on your use case, innerHTML).   
-    
-   The only tricky one there is button, which is the only form control that has both a value and text.     
-   The value of a button is the value that will be submitted if that button submits the form it's in. The text is what the user sees as the button caption. Here's an example:   
-   // const btn = document.querySelector("button");   
-   // console.log(`The button's value is: ${btn.value}`);//42   
-   // console.log(`The button's textContent is: ${btn.textContent}`);//Forty-Two    
+   //<link href="./index.css" rel="stylesheet" type="text/css" />  
+   2-4. [for in lable] connects to [other element's id ]  
+   once you click on text area that label is wrapping,  
+   the same operation to click on the [ element ] with connected id  
+   <label for="inputedCode">Input Verfication Code:</label>
+
+   2-5. form controls (input, button, select, and textarea)[.value]  
+    any other element[.innerText];
+
+   You only use value on form controls (input, button, select, and textarea). For any other element, if you want its text, use textContent or innerText (or, depending on your use case, innerHTML).
+
+   The only tricky one there is button, which is the only form control that has both a value and text.  
+   The value of a button is the value that will be submitted if that button submits the form it's in. The text is what the user sees as the button caption. Here's an example:  
+   // const btn = document.querySelector("button");  
+   // console.log(`The button's value is: ${btn.value}`);//42  
+   // console.log(`The button's textContent is: ${btn.textContent}`);//Forty-Two  
    // <button value="42">Forty-Two</button>
 
    2-6.  
