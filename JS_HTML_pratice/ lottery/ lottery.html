@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .wrap {
+        width: 600px;
+        height: 600px;
+        border: 1px black solid;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+      }
+
+      .wrap > div {
+        width: 33%;
+        height: 33%;
+        border: 1px black solid;
+        line-height: 200px;
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+      }
+
+      #spin {
+        cursor: pointer;
+        background-color: pink;
+        position: relative;
+      }
+
+      #round-btn {
+        border-radius: 50%;
+        border: 1px black solid;
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        top: 10px;
+        left: 20px;
+      }
+      #spin:hover #round-btn {
+        border-width: 3px;
+        box-shadow: 5px;
+      }
+    </style>
+    <div class="wrap">
+      <div class="option">Shopping</div>
+      <div class="option">Exercise</div>
+      <div class="option">Lost 1 dollar</div>
+      <div class="option">Washing</div>
+      <div id="spin"><div id="round-btn">Spin</div></div>
+      <div class="option">Cleaning</div>
+      <div class="option">Sleep</div>
+      <div class="option">Praticing</div>
+      <div class="option">Eating</div>
+    </div>
+
+    <script>
+      let btn = document.getElementById('spin');
+      let opt = document.getElementsByClassName('option');
+      let timer = null;
+      btn.onclick = function () {
+        let count = 0;
+        if (timer == null) {
+          timer = setInterval(() => {
+            count++;
+            //  get a random number ranging from 0-7
+            let ran = Math.round(Math.random() * (7 - 0) + 0);
+            for (let i = 0; i < opt.length; i++) {
+              opt[i].style.backgroundColor = '#fff';
+            }
+            opt[ran].style.backgroundColor = 'orange';
+            if (count >= 20) {
+              clearInterval(timer);
+              timer = null;
+            }
+          }, 100);
+        }
+      };
+    </script>
+  </body>
+</html>
