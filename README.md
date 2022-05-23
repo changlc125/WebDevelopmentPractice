@@ -40,3 +40,11 @@
     event.preventDefault();  
     event.stopPropagation();  
     Stops callback execution and returns immediately when called.
+
+3. card-flip && spite animation
+4. search bar in real time  
+   4-1. <p> is a block element ，<input> is a inline element.  
+   (star)4-2. (div) show.innerHTML="<p>"+ item+"</p>"(+"<p>"+ item+"</p>"+"<p>"+ item+"</p>")  
+   4-3. if(null)=> false;
+   4-4. String.indexOf(searchValue [, fromIndex]),if there is no matched value,return -1;  
+   4-5. xxxxx.style.display="xxxx";

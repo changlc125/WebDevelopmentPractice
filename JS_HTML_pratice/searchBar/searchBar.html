@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="search">
+        <input id="inputArea" type="text" placeholder="Enter any word" />
+        <!-- <input id="btn" type="submit" value="Search" /> -->
+      </div>
+
+      <div id="show">hi</div>
+    </div>
+    <style>
+      .search {
+        width: 200px;
+        height: 30px;
+        display: flex;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      /* #btn {
+        margin-left: 10px;
+      } */
+
+      #show {
+        position: absolute;
+        border: black solid 0.5px;
+        left: 365px;
+        display: none;
+        padding: 5px;
+      }
+    </style>
+    <script>
+      let arr = [
+        'Hello World',
+        'Javascript',
+        'React',
+        'Many framework:react,springboot',
+        'python',
+        '1999 dolloars',
+      ];
+
+      //show block is shown, entering a word and not blur
+      const input = document.getElementById('inputArea');
+      const show = document.getElementById('show');
+      input.onkeyup = function () {
+        show.style.display = 'block';
+        let str = '';
+        arr.forEach((item) => {
+          let res = item.toUpperCase().indexOf(input.value.toUpperCase());
+          if (res != -1) {
+            //we got valid result
+            // <p>res1</p><p>res2</p><p>res3</p>
+            str += '<p>' + item + '</p>';
+          }
+        });
+
+        // there exists input value or res != -1
+        // null ==false
+        if (!input.value || !str) {
+          show.innerHTML = '<p>No matched result</p>';
+        } else {
+          show.innerHTML = str;
+        }
+      };
+
+      input.onblur = function () {
+        show.style.display = 'none';
+      };
+    </script>
+  </body>
+</html>

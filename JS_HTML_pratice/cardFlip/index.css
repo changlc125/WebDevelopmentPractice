@@ -1,0 +1,30 @@
+.card-wrapper {
+  background-color: transparent;
+  width: 250px;
+  height: 350px;
+  margin: 0 auto;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+}
+.inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+.inner > div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.back {
+  transform: rotateY(180deg);
+  opacity: 0.5;
+}
+
+.card-wrapper:hover .inner {
+  transform: rotateY(180deg);
+}
