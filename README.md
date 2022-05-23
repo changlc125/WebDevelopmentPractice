@@ -49,3 +49,10 @@
    4-4. String.indexOf(searchValue [, fromIndex]),if there is no matched value,return -1;  
    4-5. xxxxx.style.display="xxxx";  
    4-6. xxxx.onblur
+
+5. lottery  
+   5-1. if (timer == null) , and timer = setInterval(() => offset the impact of opening many setInterval.  
+   5-2.  
+   width: 33%;  
+   height: 33%;  
+   3 rows，3 collum
