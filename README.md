@@ -47,4 +47,5 @@
    (star)4-2. (div) show.innerHTML="<p>"+ item+"</p>"(+"<p>"+ item+"</p>"+"<p>"+ item+"</p>")  
    4-3. if(null)=> false;  
    4-4. String.indexOf(searchValue [, fromIndex]),if there is no matched value,return -1;  
-   4-5. xxxxx.style.display="xxxx";
+   4-5. xxxxx.style.display="xxxx";  
+   4-6. xxxx.onblur
