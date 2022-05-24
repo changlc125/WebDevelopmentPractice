@@ -56,3 +56,47 @@
    width: 33%;  
    height: 33%;  
    3 rows，3 collum
+
+6. toDOList
+   6-1. `<li> ${elt.text} </li>`;  
+   6-2.  
+    const text = this.querySelector('[name=item]').value;  
+   <input type="text" name="item" placeholder="Item Name" required />
+
+   const checkboxs = document.querySelectorAll('input[type=checkbox]');  
+   <input type="checkbox"  id="item${index}"/>
+
+   6-3. event.preventDefault();
+   6-4.  
+    this.reset();  
+    //the same as this.querySelector('[name=item]').value = "";  
+    6-5.  
+    // replace the li inside of ul  
+    function showItems(items = [], itemsList) {  
+    itemsList.innerHTML = items  
+    .map((elt, index) => {  
+    return `<li> <input type="checkbox" id="item${index}"/> <label for="item${index}">${elt.text} </label></li>`;  
+    }) //for => connect to the same id
+
+   6-6.
+   localStorage.setItem(key:string,value:string)/getItem()/removeItem();
+   inspect => application => stotage => your url
+   or
+   inside console => print localStorage
+   //yes:localStorage.setItem('items', JSON.stringify(items)); //value：items =>json-formated string
+   //no:localStorage.setItem('items', items);//value：items =>string
+   const items = JSON.parse(localStorage.getItem('items')) || [];
+   localStorage.clear()
+
+   6-7. so listen to common parent elt to avoid the problem,
+   every time child elemnt has a change,it will rerender
+   //newly added item wont be listened,following elt is from localStorage
+   const checkboxs = document.querySelectorAll('input[type=checkbox]');
+   checkboxs.forEach((elt) => {
+   elt.addEventListener('click', handleCheckbox);
+   });
+
+   6-8. //user-defined attribute :data-index
+   <input type="checkbox" data-index=${index} id="item${index}"/>
+   const index = e.target.dataset.index  
+   6-9. who is connected to a event，who is the “this”
